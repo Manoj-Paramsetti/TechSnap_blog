@@ -833,5 +833,14 @@ body {
 
 #scrollspy1{
 	margin-top:12%;
-	top:20%;
+	margin-left:10%;
+	top:10%;
+	margin-bottom:20%;
+}
+
+#sub-heading{
+	color: #767676;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.5;
 }
