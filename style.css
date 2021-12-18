@@ -810,6 +810,9 @@ body {
 	.copyRight {
 		font-size: 0.5rem;
 	}
+	.main-container{
+		margin:4%;
+	}
 }
 
 @media (max-width: 376px) {
