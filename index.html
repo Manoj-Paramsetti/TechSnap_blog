@@ -25,6 +25,17 @@
         <!-- MDB -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
         <title>Frontend</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+            $("div").click(function() {
+                $("#tableContents").stop(true).toggle("slow");
+                $("#showhidebtn").text(function(i, t) {
+                return t == 'x  Hide Table of contents' ? '+  Show Table of contents' : 'x  Hide Table of contents';
+                });
+            });
+            });
+        </script>
     </head>
     <body
         data-mdb-spy="scroll"
@@ -153,12 +164,9 @@
         
         
         -->
-        <div class="show-hide py-2">
-            <i class="fa fa-times fontt" style="transition: transform .15s cubic-bezier(0,0,.2,1);"></i>
-            <span class="show-hide-text">Hide Table of contents</span>
-        </div>
+        <div class="show-hide py-2" id="showhidebtn">x  Hide Table of contents</div>
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-4" id="tableContents">
                 <!-- Scrollspy -->
                 <div id="scrollspy1" class="sticky-top">
                     <h4 class="mb-4">Web Developer</h4>
@@ -225,7 +233,7 @@
                 </div>
                 <!-- Scrollspy -->
             </div>
-            <div class="col-md-5">
+            <div class="col-md-7">
                 <!-- Spied element -->
                 <div class="main-container">
                     <section id="example-1">
@@ -405,235 +413,95 @@
                   common design principles. Front-End Developers, in particular, program the screens that users interact with
                   – and they can be far more successful with a good grasp of user-centered design.
                         </p>
-                    </div>
-                </section>
+                    </section>
+                </div>
+                <!-- Spied element -->
             </div>
-            <!-- Spied element -->
         </div>
-    </div>
-    <!--End of ScrollSpy
+        <!--End of ScrollSpy
         
-        
-        
-        -->
-    <!--<section class="main-content mt-2">
-            <div class="main-col-4 stick-to-top">
-                <h4 class="mb-4">Web Developer</h4>
-                <ul style="width: 90%; font-size: 1.1rem" class="nav flex-column mb-5">
-                    <li class="nav-item basics" style="overflow: hidden;">
-                        <div style="display: flex;justify-content: space-between;font-size: 1.14285714rem;font-weight: 600;line-height: 1.5;">
-                            <a
-                                class="nav-link active mb-3"
-                                style="color: black;"
-                                aria-current="page"
-                                href="#example-1"
-                            >The Basics</a>
-                            <span class="dd-icon-basics">
-                                <i class="fa fa-angle-down"></i>
-                            </span>
-                        </div>
-                        <ul class="sidebar-ul dd-basics dis-none">
-                            <li class="dd-basics-1 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">What Is Web Development</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="overflow: hidden;">
-                        <div style="display: flex;justify-content: space-between;font-size: 1.14285714rem;font-weight: 600;line-height: 1.5;">
-                            <a
-                                class="nav-link active mb-3"
-                                style="color: black;"
-                                aria-current="page"
-                                href="#"
-                            >On The Job</a>
-                            <span class="dd-icon-job">
-                                <i class="fa fa-angle-down"></i>
-                            </span>
-                        </div>
-                        <ul class="sidebar-ul dd-job dis-none">
-                            <li class="dd-job-1 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">What Does a Web Developer Do?</a>
-                            </li>
-                            <li class="dd-job-2 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">What Tools Do Web Developers Use?</a>
-                            </li>
-                            <li class="dd-job-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Do Web Developers Work From Home?</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <h4 class="mb-3">How to Become a Web Developer</h4>
-                <ul style="width: 90%; font-size: 1.1rem" class="nav flex-column">
-                    <li class="nav-item" style="overflow: hidden;">
-                        <div style="display: flex;justify-content: space-between;font-size: 1.14285714rem;font-weight: 600;line-height: 1.5;">
-                            <a
-                                class="nav-link active mb-3"
-                                style="color: black;"
-                                aria-current="page"
-                                href="#"
-                            >Skills</a>
-                            <span class="dd-icon-skills">
-                                <i class="fa fa-angle-down"></i>
-                            </span>
-                        </div>
-                        <ul class="sidebar-ul dd-skills dis-none">
-                            <li class="dd-skills-1 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">What Skills Do You Need to Be a Web Developor?</a>
-                            </li>
-                            <li class="dd-skills-2 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Do You Need a Degree to Be a Web Developer?</a>
-                            </li>
-                            <li class="dd-skills-3 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Why a Web Development Certificate Is Worth It</a>
-                            </li>
-                            <li class="dd-skills-4">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Are Coding Bootcamps Worth It?</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="overflow: hidden;">
-                        <div style="display: flex;justify-content: space-between;font-size: 1.14285714rem;font-weight: 600;line-height: 1.5;">
-                            <a
-                                class="nav-link active mb-3"
-                                style="color: black;"
-                                aria-current="page"
-                                href="#"
-                            >Career path</a>
-                            <span class="dd-icon-career">
-                                <i class="fa fa-angle-down"></i>
-                            </span>
-                        </div>
-                        <ul class="sidebar-ul dd-career dis-none">
-                            <li class="dd-career-1 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Is Web Development a Good Career?</a>
-                            </li>
-                            <li class="dd-career-2 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">How Hard Is It to Become a Web Developer?</a>
-                            </li>
-                            <li class="dd-career-3 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">What Companies Hire Web Developers?</a>
-                            </li>
-                            <li class="dd-career-4 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">How Much Do Web Developers Make?</a>
-                            </li>
-                            <li class="dd-career-5">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">How Long Does It Take to Become a Web Developer?</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="overflow: hidden;">
-                        <div style="display: flex;justify-content: space-between;font-size: 1.14285714rem;font-weight: 600;line-height: 1.5;">
-                            <a
-                                class="nav-link active mb-3"
-                                style="color: black;"
-                                aria-current="page"
-                                href="#"
-                            >Getting The Job</a>
-                            <span class="dd-icon-gettingjob">
-                                <i class="fa fa-angle-down"></i>
-                            </span>
-                        </div>
-                        <ul class="sidebar-ul dd-gettingjob dis-none">
-                            <li class="dd-gettingjob-1 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">How to Build a Web Developer Portfolio</a>
-                            </li>
-                            <li class="dd-gettingjob-2 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Web Developer Cover Letter Templates and Examples</a>
-                            </li>
-                            <li class="dd-gettingjob-3 mb-3">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Web Developer Resume Examples</a>
-                            </li>
-                            <li class="dd-gettingjob-4">
-                                <a style="text-decoration: none;color: #767676;padding-left: 8px;display: block;" href="#">Web Developer Interview Questions</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </section>-->
-    <div class="footer_MainBox">
-        <div class="Footer_page">
-            <footer class="Footer_conatiner">
-                <div class="Footer_header">
-                    <img src="assets/logo.png" alt="Logo">
+    -->
+        <div class="footer_MainBox">
+            <div class="Footer_page">
+                <footer class="Footer_conatiner">
+                    <div class="Footer_header">
+                        <img src="assets/logo.png" alt="Logo">
+                        <br>
+                        <br>
+                        <p>
+                            We are here to endure your muddled stages of knowing the trends while pursuing UG-CSE.
+                        </br>we help you to know about trending jobs and required skills for achieving one particular designation</p>
                     <br>
-                    <br>
-                    <p>
-                        We are here to endure your muddled stages of knowing the trends while pursuing UG-CSE.
-                    </br>we help you to know about trending jobs and required skills for achieving one particular designation</p>
-                <br>
-                <p>We will succour you in submitting your university projects as well as steer you with free tutorials, online courses, live courses and career paths</p>
-            </div>
-            <div class="Footer_columns_holder">
-                <div class="Footer_columns">
-                    <h1>Company</h1>
-                    <a href="##">About us</a>
-                    <a href="##">Learner stories</a>
-                    <a href="##">our people</a>
-                    <a href="##">jobs</a>
+                    <p>We will succour you in submitting your university projects as well as steer you with free tutorials, online courses, live courses and career paths</p>
                 </div>
-                <div class="Footer_columns">
-                    <h1>Resources</h1>
-                    <a href="##">Tutorials</a>
-                    <a href="##">Career paths</a>
-                    <a href="##">Courses</a>
-                    <a href="##">Blogs</a>
+                <div class="Footer_columns_holder">
+                    <div class="Footer_columns">
+                        <h1>Company</h1>
+                        <a href="##">About us</a>
+                        <a href="##">Learner stories</a>
+                        <a href="##">our people</a>
+                        <a href="##">jobs</a>
+                    </div>
+                    <div class="Footer_columns">
+                        <h1>Resources</h1>
+                        <a href="##">Tutorials</a>
+                        <a href="##">Career paths</a>
+                        <a href="##">Courses</a>
+                        <a href="##">Blogs</a>
+                    </div>
+                    <div class="Footer_columns">
+                        <h1>Support</h1>
+                        <a href="##">Contact us</a>
+                        <a href="##">FAQ</a>
+                        <a href="##">Any ideas/Bugs</a>
+                        <a href="##">Get Involved</a>
+                    </div>
+                    <div class="Footer_columns">
+                        <h1>Services</h1>
+                        <a href="##">Startup services</a>
+                        <a href="##">Design services</a>
+                        <a href="##">Mini Projects</a>
+                        <a href="##">Mock interviews</a>
+                    </div>
                 </div>
-                <div class="Footer_columns">
-                    <h1>Support</h1>
-                    <a href="##">Contact us</a>
-                    <a href="##">FAQ</a>
-                    <a href="##">Any ideas/Bugs</a>
-                    <a href="##">Get Involved</a>
+                <div class="join_our desktop">
+                    <p>Join our newsletter</p>
+                    <form class="input_holder">
+                        <input type="text">
+                        <button type="submit">Subscribe</button>
+                    </form>
                 </div>
-                <div class="Footer_columns">
-                    <h1>Services</h1>
-                    <a href="##">Startup services</a>
-                    <a href="##">Design services</a>
-                    <a href="##">Mini Projects</a>
-                    <a href="##">Mock interviews</a>
-                </div>
-            </div>
-            <div class="join_our desktop">
+            </footer>
+            <div class="join_our responsive">
                 <p>Join our newsletter</p>
                 <form class="input_holder">
                     <input type="text">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </footer>
-        <div class="join_our responsive">
-            <p>Join our newsletter</p>
-            <form class="input_holder">
-                <input type="text">
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-        <div class="Privacy_holder">
-            <div class="Privacy_links">
-                <a href="##">Privacy policy</a>
-                <a href="##">Cookies Notice</a>
-                <a href="##">Security</a>
-                <a href="##">Terms of use</a>
-            </div>
-            <div class="Social-media">
-                <div class="image_conatiner">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" id="link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" id="link">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC-APsSZXqFUpTTg9qvGW6D5hERazjQfAMkM0Oz6b9sC3uIwU4-_fD8CatVhbAUG4hz3g&usqp=CAU" id="link">
+            <div class="Privacy_holder">
+                <div class="Privacy_links">
+                    <a href="##">Privacy policy</a>
+                    <a href="##">Cookies Notice</a>
+                    <a href="##">Security</a>
+                    <a href="##">Terms of use</a>
+                </div>
+                <div class="Social-media">
+                    <div class="image_conatiner">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" id="link">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" id="link">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC-APsSZXqFUpTTg9qvGW6D5hERazjQfAMkM0Oz6b9sC3uIwU4-_fD8CatVhbAUG4hz3g&usqp=CAU" id="link">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="copyRight">
-        Made with 💗 in india © 2021 Techsnap Educations LLP. All Rights
+        <div class="copyRight">
+            Made with 💗 in india © 2021 Techsnap Educations LLP. All Rights
       Reserved.
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-<script src="script.js"></script>
-<script>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+        <script src="script.js"></script>
+        <script>
     new Splide( '.splide', {
       type   : 'loop',
       autoplay: true,
@@ -651,9 +519,9 @@
         }
       },
     } ).mount();
-</script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
 		AOS.init({
 			duration: 900,
 			offset: 220,
@@ -684,8 +552,8 @@
 				});
 			}
 		});
-</script>
-<script>
+        </script>
+        <script>
 			//----------------------------
 
 		  const Close=document.querySelector(".Close");
@@ -700,7 +568,7 @@
 
 		})
 	//-------
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
 </html>
