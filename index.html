@@ -28,7 +28,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
             $(document).ready(function() {
-            $("div").click(function() {
+            $("#showhidebtn").click(function() {
                 $("#tableContents").stop(true).toggle("slow");
                 $("#showhidebtn").text(function(i, t) {
                 return t == 'x  Hide Table of contents' ? '+  Show Table of contents' : 'x  Hide Table of contents';
@@ -169,67 +169,177 @@
             <div class="col-md-4" id="tableContents">
                 <!-- Scrollspy -->
                 <div id="scrollspy1" class="sticky-top">
-                    <h4 class="mb-4">Web Developer</h4>
-                    <ul class="nav flex-column nav-pills menu-sidebar">
-                        <li class="nav-item">
-                            <a class="nav-link active mb-3" style="width: 90%; font-size: 1.1rem;color: black;" href="#example-1">The Basics</a>
-                            <ul class="nav flex-column ps-3">
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example1-sub-A">What Is Web Development</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active mb-3" style="width: 90%; font-size: 1.1rem;color: black;" href="#example-2">On the Job</a>
-                            <ul class="nav flex-column ps-3">
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example2-sub-A">What does a web developer do?</a>
-                                </li>
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example2-sub-B">
-                                        What tools do web developer use?
+                    <div class="accordion" id="accordionExample">
+                        <ul class="nav flex-column nav-pills menu-sidebar">
+                            <li class="nav-item">
+                                <div class="accordion-item">
+                                    <h4 class="m-4">Web Developer</h4>
+                                    <a
+                                        class="nav-link active mb-3"
+                                        style="width: 90%; font-size: 16px;font-weight:600;color: black;"
+                                        href="#example-1"
+                                        id="headingOne"
+                                    >
+                                        <button
+                                            id="accordion-button"
+                                            class="accordion-button"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne"
+                                            aria-expanded="true"
+                                            aria-controls="collapseOne"
+                                        >
+                                            The Basics
+                                        </button>
                                     </a>
-                                </li>
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example2-sub-C">Do web developers work at home?</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <h4 class="mb-4">
-                        How to Become a Web
-                        <br>
-                        Developer
-                    </h4>
-                    <ul class="nav flex-column nav-pills menu-sidebar">
-                        <li class="nav-item">
-                            <a class="nav-link active mb-3" style="width: 90%; font-size: 1.2rem;color: black;" href="#example-3">Skills</a>
-                            <ul class="nav flex-column ps-3">
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example3-sub-A">What Skills Do You Need to Be a Web Developer?</a>
-                                </li>
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example3-sub-B">Are Coding Bootcamps Worth It?</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active mb-3" style="width: 90%; font-size: 1.1rem;color: black;" href="#example-4">Career path</a>
-                            <ul class="nav flex-column ps-3">
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example4-sub-A">Is Web Development a Good Career?</a>
-                                </li>
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example4-sub-B">
-                                        How Hard Is It to Become a Web Developer?
+                                    <div
+                                        id="collapseOne"
+                                        class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne"
+                                        data-bs-parent="#accordionExample"
+                                    >
+                                        <div class="accordion-body">
+                                            <ul class="nav flex-column ps-3">
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example1-sub-A">What Is Web Development</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <a
+                                        class="acc-heading nav-link active mb-3"
+                                        style="width: 90%; font-size: 1.1rem;color: black;"
+                                        href="#example-2"
+                                        id="headingTwo"
+                                    >
+                                        <button
+                                            id="accordion-button"
+                                            class="accordion-button"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo"
+                                            aria-expanded="true"
+                                            aria-controls="collapseTwo"
+                                        >
+                                            On the Job
+                                        </button>
                                     </a>
-                                </li>
-                                <li class="nav-item mb-3">
-                                    <a class="nav-link" id="sub-heading" href="#example4-sub-C">How Much Do Web Developers Make?</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                                    <div
+                                        id="collapseTwo"
+                                        class="accordion-collapse collapse show"
+                                        aria-labelledby="headingTwo"
+                                        data-bs-parent="#accordionExample"
+                                    >
+                                        <div class="accordion-body">
+                                            <ul class="nav flex-column ps-3">
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example2-sub-A">What does a web developer do?</a>
+                                                </li>
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example2-sub-B">
+                                                        What tools do web developer use?
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example2-sub-C">Do web developers work at home?</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav flex-column nav-pills menu-sidebar">
+                            <li class="nav-item">
+                                <div class="accordion-item">
+                                    <h4 class="m-4">
+                                        How to Become a Web
+                                        <br>
+                                        Developer
+                                    </h4>
+                                    <a
+                                        class="nav-link active mb-3"
+                                        style="width: 90%; font-size: 1.1rem;color: black;"
+                                        href="#example-3"
+                                        id="headingThree"
+                                    >
+                                        <button
+                                            id="accordion-button"
+                                            class="accordion-button"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseThree"
+                                            aria-expanded="true"
+                                            aria-controls="collapseThree"
+                                        >
+                                            Skills
+                                        </button>
+                                    </a>
+                                    <div
+                                        id="collapseThree"
+                                        class="accordion-collapse collapse show"
+                                        aria-labelledby="headingThree"
+                                        data-bs-parent="#accordionExample"
+                                    >
+                                        <div class="accordion-body">
+                                            <ul class="nav flex-column ps-3">
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example3-sub-A">What Skills Do You Need to Be a Web Developer?</a>
+                                                </li>
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example3-sub-B">Are Coding Bootcamps Worth It?</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <a
+                                        class="nav-link active mb-3"
+                                        style="width: 90%; font-size: 1.1rem;color: black;"
+                                        href="#example-4"
+                                        id="headingFour"
+                                    >
+                                        <button
+                                            id="accordion-button"
+                                            class="accordion-button"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseFour"
+                                            aria-expanded="true"
+                                            aria-controls="collapseFour"
+                                        >
+                                            Career path
+                                        </button>
+                                    </a>
+                                    <div
+                                        id="collapseFour"
+                                        class="accordion-collapse collapse show"
+                                        aria-labelledby="headingFour"
+                                        data-bs-parent="#accordionExample"
+                                    >
+                                        <div class="accordion-body">
+                                            <ul class="nav flex-column ps-3">
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example4-sub-A">Is Web Development a Good Career?</a>
+                                                </li>
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example4-sub-B">
+                                                        How Hard Is It to Become a Web Developer?
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3">
+                                                    <a class="nav-link" id="sub-heading" href="#example4-sub-C">How Much Do Web Developers Make?</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- Scrollspy -->
             </div>

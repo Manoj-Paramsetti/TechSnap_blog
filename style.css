@@ -836,6 +836,8 @@ body {
 
 #scrollspy1{
 	margin-top:12%;
+	position: sticky;
+	z-index:-1;
 	margin-left:10%;
 	top:10%;
 	margin-bottom:30%;
@@ -846,4 +848,8 @@ body {
 	font-size: 1rem;
 	font-weight: 600;
 	line-height: 1.5;
+}
+
+#accordion-button{
+	font-size: 16px;font-weight:600;color: black;
 }
